@@ -1,0 +1,3 @@
+(include "./widgets/music.yuck")
+(include "./widgets/volume.yuck")
+(include "./widgets/date.yuck")

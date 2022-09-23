@@ -1,0 +1,38 @@
+(defpoll week_day
+  :interval "10s"
+  "./scripts/week_day.sh"
+)
+
+(defpoll date_info
+  :interval "1s"
+  "date '+%d %b %Y - %H:%M %p'"
+)
+
+(defwidget date []
+  (box
+    :class "container"
+    :orientation "vertical"
+    :space-evenly false
+    :valign "center"
+		
+    (label :class "week_day" :text week_day)
+    (label :class "text" :text date_info)
+  )
+)
+
+(defwindow date
+	:monitor 0
+	:geometry (
+		geometry
+			:x "56px"
+			:y "0"
+			:width "452px"
+			:height "114px"
+			:anchor "center left"
+	)
+	:stacking "fg"
+	:wm-ignore false
+	:windowtype "dock"
+	
+	(date)
+)

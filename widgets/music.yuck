@@ -1,0 +1,58 @@
+(defpoll title
+  :interval "1s"
+  "./scripts/player_title.sh"
+)
+
+(defpoll artist
+  :interval "1s"
+  "./scripts/player_artist.sh"
+)
+
+(defwidget music []
+  (box
+    :orientation "horizontal"
+    :space-evenly false
+    :spacing 16
+    
+    (image
+      :path "./assets/music.png"
+      :image-width 60
+      :image-height 60
+    )
+    
+    (box
+      :orientation "vertical"
+      :space-evenly false
+      
+      (label
+        :class "title"
+        :limit-width 200
+        :text title
+        :xalign 0
+      )
+      
+      (label
+        :class "text"
+        :text artist
+        :xalign 0
+      )
+    )
+  )
+)
+
+(defwindow music
+	:monitor 0
+	:geometry (
+		geometry
+			:x "56px"
+			:y "-100px"
+			:width "290px"
+			:height "65px"
+			:anchor "bottom left"
+	)
+	:stacking "fg"
+	:wm-ignore false
+	:windowtype "dock"
+	
+	(music)
+)

@@ -1,0 +1,48 @@
+(defpoll volume_info
+  :interval "100ms"
+  "./scripts/volume.sh"
+)
+
+(defwidget volume []
+	(box
+	  :orientation "vertical"
+		:spacing 10
+		:space-evenly false
+		:valign "center"
+		:halign "end"
+		
+		(image
+		  :path "./assets/speaker.png"
+		  :image-width 50
+		  :image-height 50
+		)
+		
+		(scale
+			:min 0
+			:max 101
+			:active true
+			:value volume_info
+			:onchange "amixer -D pulse sset Master {}%"
+			:orientation "v"
+			:flipped true
+		)
+	)
+)
+
+(defwindow volume
+	:monitor 0
+	:geometry (
+		geometry
+			:x "-56px"
+			:y "0"
+			:width "50px"
+			:height "266px"
+			:anchor "center right"
+	)
+	:stacking "fg"
+	:wm-ignore false
+	:windowtype "dock"
+	
+	(volume)
+)
+

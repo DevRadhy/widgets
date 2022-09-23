@@ -1,0 +1,35 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+.text {
+  font: 18px "Fira Sans";
+}
+
+.title {
+  font: 24px "Fira Sans";
+  font-weight: 700;
+}
+
+.week_day {
+  font: 80px "Fira Sans";
+  font-weight: 700;
+}
+
+scale trough highlight {
+  all: unset;
+  
+  background-color: #cba6f7;
+  
+  border-radius: 10px;
+}
+scale trough {
+  all: unset;
+  
+  background-color: #313244;
+  
+  min-height: 200px;
+  min-width: 50px;
+  
+  border-radius: 10px;
+}
